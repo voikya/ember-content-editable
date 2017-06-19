@@ -244,4 +244,16 @@ export default Ember.Component.extend({
   mouseLeave(event) {
     this.sendAction('mouse-leave', this, event);
   },
+
+  input(event) {
+    if (this.get('on-input')) {
+      this.sendAction('on-input', this, event);
+    }
+  },
+
+  paste(event) {
+    if (this.get('on-paste')) {
+      this.sendAction('on-paste', this, event);
+    }
+  }
 });
